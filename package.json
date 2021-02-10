@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon -L index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "jsonwebtoken": "^8.5.1",
     "memory-cache": "^0.2.0",
     "mongoose": "^5.11.15",
+    "mongoose-autopopulate": "^0.12.3",
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
