@@ -19,6 +19,9 @@ const Routes = require('../routes');
 //models 9 de feb
 const {User, Idea, Comment} = require("../models");
 
+//repositories 11 de feb   
+const {UserRepository, IdeaRepository, CommentRepository} = require("../repositories");
+
 const container = createContainer();
 
 //Metodo para crear una nueva clase de inyección
@@ -40,8 +43,13 @@ container
     })
     .register({
         User: asValue(User),
-        Idea: asClass(Idea),
-        Commnet: asClass(Commnet)
+        Idea: asValue(Idea),
+        Comment: asValue(Comment)
+    })
+    .register({
+        UserRepository: asClass(UserRepository).singleton(),
+        IdeaRepository: asClass(IdeaRepository).singleton(),
+        CommentRepository: asClass(CommentRepository).singleton()
     });
 
 module.exports = container;
