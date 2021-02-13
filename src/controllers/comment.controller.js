@@ -31,7 +31,7 @@ class CommentController {
 
     //METODOS ADICIONALES
 
-    async getIdeasComments(req, res){
+    async getIdeaComments(req, res){
         const { ideaId } = req.params;
         const comments = await _commentService.getIdeaComments(ideaId);
         return res.send(comments);
