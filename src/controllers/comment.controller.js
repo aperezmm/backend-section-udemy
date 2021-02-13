@@ -12,7 +12,8 @@ class CommentController {
     }
 
     async getAll(req, res){
-        const ideas = await _commentService.getAll();
+        const { pageSize, pageNum } = req.query;
+        const ideas = await _commentService.getAll(pageSize, pageNum);
         return res.send(ideas);
     }
 
