@@ -11,8 +11,8 @@ module.exports = function({ IdeaController}){
     router.patch("/:ideaId", AuthMiddleware, IdeaController.update);
     router.delete("/:ideaId", AuthMiddleware, IdeaController.delete);
 
-    router.post(":ideaId/upvote", IdeaController.upvoteIdea);
-    router.post(":ideaId/downvote", IdeaController.downvoteIdea);
+    router.post("/:ideaId/upvote", IdeaController.upvoteIdea);
+    router.post("/:ideaId/downvote", IdeaController.downvoteIdea);
 
     
     return router;
