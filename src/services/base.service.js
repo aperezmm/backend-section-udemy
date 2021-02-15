@@ -47,7 +47,9 @@ class BaseService {
             error.message = "Id must be send";
             throw error;
         }
-        return await this.repository.delete(id);
+        await this.repository.delete(id);
+
+        return true;
     }
 }
 
